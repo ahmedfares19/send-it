@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Muli|ZCOOL+QingKe+HuangYou&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#chat__container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#left__side {
+    float: left;
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(16, 21, 122);
+    box-shadow: 0px 10px 15px rgba(125, 128, 185, 0.452);
+    z-index: 0;
+}
+
+@media (max-width: 1500px) {
+    #left__side {
+        display: none;
+        width: 0;
+    }
+
+    #right__side {
+        width: 100vw;
+    }
+}
+
+#left__side .brand {
+    user-select: none;
+    padding: 25px;
+    padding-left: 40px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* background: linear-gradient(0deg, rgba(13, 13, 13, 1) 0%, rgba(87, 95, 242, 0.8) 100%); */
+    background-color: #0D0D0D;
+}
+
+.brand i.fas {
+    color: #575FF2;
+    font-size: 50px;
+}
+
+#brand__name {
+    text-align: center;
+    padding-left: 45px;
+    letter-spacing: 4px;
+    color: #575FF2;
+    font-size: 35px;
+    font-style: normal;
+    font-family: 'ZCOOL QingKe HuangYou';
+}
+
+#user__list span p {
+    text-align: center;
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 19px;
+    background: rgba(96, 118, 245, 0.3);
+    font-family: muli;
+    font-weight: bold;
+    letter-spacing: 1px;
+    user-select: none;
+}
+
+#users ul {
+    list-style: none;
+    padding: 0px 0px;
+}
+
+#users ul li {
+    padding: 8px;
+    margin-bottom: 10px;
+    font-family: muli;
+    font-size: 22px;
+    letter-spacing: 1px;
+    background-color: rgba(92, 114, 242, 0.174);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+#users ul li i {
+    color: rgb(15, 185, 38);
+    font-size: 8px;
+    padding-right: 10px;
+}
+
+#users ul li a.user__name {
+    color: rgb(185, 194, 247);
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+#room_info {
+    padding: 10px;
+    background-color: rgba(92, 114, 242, 0.129);
+    margin: 10px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0px 7px 20px rgba(92, 114, 242, 0.182); */
+}
+
+#room_info span {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(187, 187, 187, 0.603);
+    font-size: 16px;
+    font-family: muli;
+
+}
+
+#right__side {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.644);
+    align-content: space-between;
+    width: 82vw;
+
+}
+
+#messages__container {
+    width: 100%;
+    height: 100vh;
+
+    /* border-radius: 10px; */
+    /* margin: 5px auto; */
+    /* display: flex; */
+    display: inline-block;
+    flex-direction: column;
+    overflow: scroll;
+    background-image: url(../assets/bg3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.message {
+    padding: 5px 40px 2px 10px;
+    background-color: rgba(92, 114, 242, 0.482);
+    margin: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    float: left;
+    clear: both;
+    max-width: 40%;
+    min-width: 30%;
+    box-shadow: 0px 7px 20px rgba(92, 114, 242, 0.482);
+    border: 1px solid #777;
+
+}
+
+.message:nth-child(2),
+.message:nth-child(4),
+.message:nth-child(6),
+.message:nth-child(8) {
+    float: right;
+}
+
+.message__sender {
+    font-size: 10px;
+    font-family: muli;
+    color: rgb(104, 110, 238);
+    padding: 4px;
+    /* background-color: brown; */
+}
+
+.message__sender a {
+    font-size: 14px;
+    padding: 0 2px;
+}
+
+.message .content {
+    margin: 0px 5px 10px 15px;
+    font-size: 18px;
+    font-family: muli;
+    color: rgba(221, 221, 221, 0.93);
+    /* background-color: rgb(82, 8, 8); */
+}
+
+.message .content p {
+    font-size: 18px;
+    font-family: muli;
+    padding: 0;
+    margin: 0;
+}
+
+.message__info {
+    font-size: 12px;
+    font-family: muli;
+    color: rgb(104, 110, 238);
+    padding: 4px;
+    /* background-color: rgb(82, 8, 8); */
+}
+
+.delivery {
+    font-size: 8px;
+    padding: 0 4px;
+}
+
+#form_body form {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#message__area {
+    /* padding: 5px; */
+    /* padding: 0.5em; */
+    padding-top: 10px;
+    padding-left: 15px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-family: muli;
+    border-radius: 3px;
+    border: none;
+    resize: none;
+    width: 100%;
+    border: 1px solid #5C73F2;
+    color: rgba(24, 58, 245, 0.953);
+}
+
+#message__area::placeholder {
+    color: rgba(11, 25, 100, 0.23);
+    letter-spacing: 4px;
+    padding-left: 10px;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+#send__message {
+    padding: 10px 70px;
+
+
+}
+
+#send__location {
+    padding: 10px 10px;
+}
+
+#send__file {
+    padding: 10px 10px;
+}
+
+.button {
+    font-size: 18px;
+    font-weight: 100%;
+    letter-spacing: 2px;
+    font-family: muli;
+    border-radius: 3px;
+    color: rgb(169, 181, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #575FF2;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: 1px solid #575FF2;
+    transition: color 0.4s;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.button i {
+    padding: 5px;
+    font-size: 15px;
+
+}
+
+.button:hover {
+    background-color: rgb(70, 78, 219);
+    color: #eee;
+}
+
+.button:active {
+    background-color: transparent;
+    color: #575FF2;
+}

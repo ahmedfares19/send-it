@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/web-site-icons.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ae234012ff.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <div id="chat__container">
+        <div id="left__side">
+            <div class="brand">
+                <i class="fas fa-envelope"></i>
+                <i id="brand__name">Send it</i>
+            </div>
+            <div id="room_info">
+                <span>Room Name : </span>
+                <span id="room__name"></span>
+                <span>User Name : </span>
+                <span id="username"></span>
+                <div></div>
+                <span>Admin : </span>
+                <span id="room__admin"></span>
+
+            </div>
+            <div id="user__list">
+                <span>
+                    <p>connected users</p>
+                </span>
+                <div id="users">
+                    <ul>
+                        <li><a class="user__name">ahmed</a> <i class="fas fa-circle"></i></li>
+                        <li><a class="user__name">ahmed</a> <i class="fas fa-circle"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="right__side">
+            <div id="messages__container">
+                <div class="message">
+                    <div class="message__sender">
+                        <i class="fas fa-user"></i>
+                        <a>Ahmed</a>
+                    </div>
+                    <div class="content">
+                        <p>how are you today ?</p>
+                    </div>
+                    <div class="message__info">
+                        <span class="time">12:04 am</span>
+                        <span class="delivery"><i class="fas fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div id="form_body">
+                <form>
+                    <textarea name="Text" cols="40" rows="1" id="message__area" placeholder="type a message"></textarea>
+                    <span id="send__message" class="button"><i class="far fa-envelope-open"></i><a>Send</a></span>
+                    <span id="send__location" class="button"><i class="fas fa-map-marked-alt"></i><a>GPS</a></span>
+                    <span id="send__file" class="button"><i class="fas fa-paperclip"></i><a>Attachment</a></span>
+                </form>
+            </div>
+            </divc>
+        </div>
+
+        <!-- these are tempelet for rendering -->
+        <script id="message__templete" type="text/html">
+            <div class="message">
+                <div class="message__sender">
+                    <i class="fas fa-user"></i>
+                    <a>{{userName}}</a>
+                </div>
+                <div class="content">
+                    <p>{{message}}</p>
+                </div>
+                <div class="message__info">
+                    <span class="time">{{sendTime}}</span>
+                    <span class="delivery"><i class="fas fa-circle"></i></span>
+                </div>
+            </div>
+        </script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+
+
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/chat.js"></script>
+</body>
+
+</html>
